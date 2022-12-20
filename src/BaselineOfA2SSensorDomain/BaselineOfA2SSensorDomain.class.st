@@ -25,12 +25,13 @@ BaselineOfA2SSensorDomain class >> declarePackagesIn: spec [
 		package: #'A2S-Sensor-Application'
 		with: [ spec requires: #( 'PharoEDA' ) ];
 		package: #'A2S-Sensor-Domain'
-		with: [ spec requires: #( 'A2S-Sensor-Application' 'PharoEDA' ) ];
+		with: [ spec requires: #( 'A2S-Sensor-Application'
+				   'PharoEDA' ) ];
 		package: #'A2S-Sensor-Domain-Tests'
-		with: [ spec requires: #( 'EDASA-Domain' ) ];
-		package: #'A2S-Sensor-Application-Tests'
-		with: [ 
-			spec requires: #( 'A2S-Sensor-Application' 'A2S-Sensor-Domain-Tests' ) ];
+		with: [ spec requires: #( 'A2S-Sensor-Domain' ) ];
+		package: #'A2S-Sensor-Application-Tests' with: [ 
+			spec requires:
+					#( 'A2S-Sensor-Application' 'A2S-Sensor-Domain-Tests' ) ];
 		package: #'A2S-Sensor-Tools'
 		with: [ spec requires: #( 'PharoEDATools' ) ]
 ]
