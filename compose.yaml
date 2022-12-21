@@ -1,0 +1,44 @@
+services:
+  rabbitmq:
+    image: acmsl-phusion/pharo-eda-rabbitmq:latest
+    ports:
+      - "0.0.0.0:5672:5672"
+      - "0.0.0.0:15672:15672"
+      - "0.0.0.0:61613:61613"
+    networks:
+      - front-tier
+      - back-tier
+    environment:
+      - ADMIN_USER_PASSWORD=secret
+      - MONITORING_USER_PASSWORD=secret
+    volumes:
+      - rabbitmq-mnesia:/backup/rabbitmq/mnesia
+      - type: bind
+        source: changesets/rabbitmq
+        target: /backup/rabbitmq/changesets
+
+  eventStore:
+    image: acmsl-phusion/pharo-eda-mongodb:latest
+    ports:
+      - "0.0.0.0:27017:27017"
+    networks:
+      - back-tier
+    environment:
+      - ADMIN_USER_PASSWORD=secret
+      - BACKUP_USER_PASSWORD=secret
+      - FORCE_DELETE_ALL=true
+      - AUTHENTICATION_MECHANISM=SCRAM-SHA-1
+    volumes:
+      - mongodb-db:/backup/mongodb/db
+      - type: bind
+        source: changesets/mongodb
+        target: /backup/mongodb/changesets
+
+volumes:
+  rabbitmq-mnesia:
+  mongodb-db:
+
+networks:
+  # The presence of these objects is sufficient to define them
+  front-tier: {}
+  back-tier: {}

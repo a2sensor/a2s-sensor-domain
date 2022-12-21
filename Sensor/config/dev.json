@@ -1,0 +1,80 @@
+{
+  "default": true,
+  "commandListener": {
+    "stomp": {
+      "host": "rabbitmq.dev",
+      "port": 61613,
+      "user": "sample-1",
+      "password": "devsecret",
+      "durable": true,
+      "timeout": 60,
+      "debug": true,
+      "queue": "to-sample-1",
+      "ack": "client-individual",
+      "prefetchCount": 1,
+      "restartOnErrors": false
+    }
+  },
+  "eventPublisher": {
+    "stomp": {
+      "host": "rabbitmq.dev",
+      "port": 61613,
+      "user": "sample-1",
+      "password": "devsecret",
+      "durable": true,
+      "timeout": 60,
+      "debug": true,
+      "exchange": "from-sample-1",
+      "routingKey": "#",
+      "errorExchange": "sample-1-errors",
+      "errorRoutingKey": "#"
+    }
+  },
+  "eventStore": {
+    "mongodb": {
+      "host": "localhost",
+      "port": 27017,
+      "user": "sample1",
+      "password": "secret",
+      "database": "Sample1",
+      "authenticationMechanism": "SCRAM-SHA-1",
+      "tls": false,
+      "urls": "mongodb://localhost:27017/Sample1",
+      "debug": true,
+      "enableReplication": false,
+      "ensuringCurrentOnSave": false,
+      "ensuringCurrentReferencesOnQueries": false,
+      "lazySynchronize": true,
+      "forceEager": false,
+      "wireProtocolEnabled": true,
+      "enableSingleton": false
+    }
+  },
+  "projections": {
+    "mongodb": {
+      "host": "mongodb.dev",
+      "port": 27017,
+      "user": "sample-1",
+      "password": "devsecret",
+      "database": "Sample1Projections",
+      "authenticationMechanism": "SCRAM-SHA-1",
+      "tls": false,
+      "urls": "mongodb://mongodb.dev:27017/",
+      "debug": true,
+      "enableReplication": false,
+      "ensuringCurrentOnSave": false,
+      "ensuringCurrentReferencesOnQueries": false,
+      "lazySynchronize": true,
+      "forceEager": false,
+      "wireProtocolEnabled": false,
+      "enableSingleton": false,
+      "concurrentSynchronization": false,
+      "headlessMode": true,
+      "strategy": "",
+      "enableSynchronization": true
+    }
+  },
+  "logging": {
+    "level": "info"
+  }
+}

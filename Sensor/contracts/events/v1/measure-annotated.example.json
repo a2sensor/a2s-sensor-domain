@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "id": "ae7dd6ef-cab7-4b96-97e1-8b591b7a32e9",
+    "version": 1,
+    "timestamp": "2022-02-15T00:00:10",
+    "correlationId": "57b8ac7e-ecc6-483f-aa03-c28ecd9e5587",
+    "type": "MEASURE_ANNOTATED"
+  },
+  "body": {
+    "id": "<ANYTHING>",
+    "timestamp": "2022-02-15T00:00:00",
+    "measure": "1325.5",
+    "version": 2,
+    "tenant": "default"
+  }
+}

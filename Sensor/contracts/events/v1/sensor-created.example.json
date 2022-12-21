@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "id": "ae4b0c09-23f7-407e-aa14-a947377e2798",
+    "version": 1,
+    "timestamp": "2022-02-14T00:00:10",
+    "correlationId": "de57effe-4246-4aee-a96e-fc67e3e48c74",
+    "type": "SENSOR_CREATED"
+  },
+  "body": {
+    "id": "<ANYTHING>",
+    "sn": "0199f777-dfbb-4c0a-8f5b-4cd123ed234f",
+    "model": "model1",
+    "vendor": "acme",
+    "version": 1,
+    "tenant": "default"
+  }
+}

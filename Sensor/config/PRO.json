@@ -1,0 +1,79 @@
+{
+  "default": false,
+  "commandListener": {
+    "stomp": {
+      "host": "commandbus",
+      "port": 61613,
+      "user": "UE45",
+      "password": "56U5K6%6351aju5",
+      "durable": true,
+      "timeout": 60,
+      "debug": false,
+      "queue": "commands",
+      "ack": "client-individual",
+      "prefetchCount": 1
+    }
+  },
+  "eventPublisher": {
+    "stomp": {
+      "host": "eventbus",
+      "port": 61613,
+      "user": "UE45",
+      "password": "56U5K6%6351aju5",
+      "durable": true,
+      "timeout": 60,
+      "debug": true,
+      "exchange": "events",
+      "routingKey": "#",
+      "errorExchange": "errors",
+      "errorRoutingKey": "#"
+    }
+  },
+  "eventStore": {
+    "mongodb": {
+      "host": "mongodb",
+      "port": 27017,
+      "user": "UE45",
+      "password": "56U5K6%6351aju5",
+      "database": "",
+      "authenticationMechanism": "SCRAM-SHA-1",
+      "tls": false,
+      "urls": "",
+      "debug": true,
+      "enableReplication": false,
+      "ensuringCurrentOnSave": false,
+      "ensuringCurrentReferencesOnQueries": false,
+      "lazySynchronize": true,
+      "forceEager": false,
+      "wireProtocolEnabled": false,
+      "enableSingleton": false
+    }
+  },
+  "projections": {
+    "mongodb": {
+      "host": "mongodb",
+      "port": 27017,
+      "user": "UE45",
+      "password": "56U5K6%6351aju5",
+      "database": "",
+      "authenticationMechanism": "SCRAM-SHA-1",
+      "tls": false,
+      "urls": "",
+      "debug": true,
+      "enableReplication": false,
+      "ensuringCurrentOnSave": false,
+      "ensuringCurrentReferencesOnQueries": false,
+      "lazySynchronize": true,
+      "forceEager": false,
+      "wireProtocolEnabled": false,
+      "enableSingleton": false,
+      "concurrentSynchronization": false,
+      "headlessMode": true,
+      "strategy": "",
+      "enableSynchronization": true
+    }
+  },
+  "logging": {
+    "level": "info"
+  }
+}

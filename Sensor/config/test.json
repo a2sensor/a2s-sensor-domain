@@ -1,0 +1,79 @@
+{
+  "default": false,
+  "commandListener": {
+    "stomp": {
+      "host": "localhost.test",
+      "port": 61614,
+      "user": "testuser",
+      "password": "testsecret",
+      "durable": true,
+      "timeout": 60,
+      "debug": true,
+      "queue": "testcommands",
+      "ack": "client-individual",
+      "prefetchCount": 1
+    }
+  },
+  "eventPublisher": {
+    "stomp": {
+      "host": "localhost.test",
+      "port": 61614,
+      "user": "testuser",
+      "password": "testsecret",
+      "durable": true,
+      "timeout": 60,
+      "debug": true,
+      "exchange": "testevents",
+      "routingKey": "#",
+      "errorExchange": "testErrors",
+      "errorRoutingKey": "#"
+    }
+  },
+  "eventStore": {
+    "mongodb": {
+      "host": "localhost.test",
+      "port": 27017,
+      "user": "testuser",
+      "password": "testsecret",
+      "database": "",
+      "authenticationMechanism": "SCRAM-SHA-1",
+      "tls": false,
+      "urls": "mongodb://localhost:27017/",
+      "debug": true,
+      "enableReplication": false,
+      "ensuringCurrentOnSave": false,
+      "ensuringCurrentReferencesOnQueries": false,
+      "lazySynchronize": true,
+      "forceEager": false,
+      "wireProtocolEnabled": false,
+      "enableSingleton": false
+    }
+  },
+  "projections": {
+    "mongodb": {
+      "host": "localhost.test",
+      "port": 27017,
+      "user": "testuser",
+      "password": "testsecret",
+      "database": "",
+      "authenticationMechanism": "SCRAM-SHA-1",
+      "tls": false,
+      "urls": "",
+      "debug": true,
+      "enableReplication": false,
+      "ensuringCurrentOnSave": false,
+      "ensuringCurrentReferencesOnQueries": false,
+      "lazySynchronize": true,
+      "forceEager": false,
+      "wireProtocolEnabled": false,
+      "enableSingleton": false,
+      "concurrentSynchronization": false,
+      "headlessMode": true,
+      "strategy": "",
+      "enableSynchronization": true
+    }
+  },
+  "logging": {
+    "level": "info"
+  }
+}
