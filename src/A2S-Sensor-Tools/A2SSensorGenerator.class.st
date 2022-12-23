@@ -9,5 +9,5 @@ Class {
 { #category : #testing }
 A2SSensorGenerator >> packages [
 
-	^ OrderedCollection with: 'A2S-Sensor-Domain' with: 'A2S-Sensor-Domain-Tests'
+	^ ((EDAAggregateRoot allSubclasses reject: [ :c | c = EDATestAggregateRoot ]) collect: [ :c | c package name ]) select: [ :p | (p beginsWithSubCollection: 'A2S-') and: [ ((p indexOf: '-Domain-') >= 0) or: [ (p endsWithSubCollection: '-Tests')] ] ]
 ]

@@ -9,9 +9,12 @@ BaselineOfA2SSensorDomain class >> declareGroupsIn: spec [
 
 	spec
 		group: 'core'
-		with: #( #'A2S-Sensor-Application' #'A2S-Sensor-Domain' #'A2S-Sensor-Tools' );
+		with:
+			#( #'A2S-Sensor-Application' #'A2S-Sensor-Domain'
+			   #'A2S-Sensor-Domain-A2SSensor' #'A2S-Sensor-Tools' );
 		group: 'tests'
-		with: #( #'A2S-Sensor-Domain-Tests' #'A2S-Sensor-Application-Tests' );
+		with:
+			#( #'A2S-Sensor-Domain-Tests-A2SSensor' #'A2S-Sensor-Application-Tests' );
 		group: 'publishing'
 		with: #( 'core' 'tests' 'Pillar' 'PillarCore' 'PillarDocumentModel'
 			   'PillarMicro' );
@@ -27,11 +30,13 @@ BaselineOfA2SSensorDomain class >> declarePackagesIn: spec [
 		package: #'A2S-Sensor-Domain'
 		with: [ spec requires: #( 'A2S-Sensor-Application'
 				   'PharoEDA' ) ];
-		package: #'A2S-Sensor-Domain-Tests'
-		with: [ spec requires: #( 'A2S-Sensor-Domain' ) ];
+		package: #'A2S-Sensor-Domain-A2SSensor'
+		with: [ spec requires: #( 'A2S-Sensor-Domain' 'PharoEDA' ) ];
+		package: #'A2S-Sensor-Domain-Tests-A2SSensor'
+		with: [ spec requires: #( 'A2S-Sensor-Domain-A2SSensor' ) ];
 		package: #'A2S-Sensor-Application-Tests' with: [ 
 			spec requires:
-					#( 'A2S-Sensor-Application' 'A2S-Sensor-Domain-Tests' ) ];
+					#( 'A2S-Sensor-Application' 'A2S-Sensor-Domain-Tests-A2SSensor' ) ];
 		package: #'A2S-Sensor-Tools'
 		with: [ spec requires: #( 'PharoEDATools' ) ]
 ]
