@@ -1,4 +1,1 @@
-XSOCK=/tmp/.X11-unix
-XAUTH=/tmp/.docker.xauth
-xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
-docker run -it -v ${HOME}/.netrc:/home/pharo/.netrc:ro -v ${HOME}/.ssh:/home/pharo/.ssh:ro -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH -v ${HOME}/.config/pharo:/home/pharo/.config/pharo:rw -v ${PWD}:/home/pharo/work --network=host acmsl-phusion/gradle-gtoolkit-texlive:latest
+.gradle-pharo/run-pharo-in-docker

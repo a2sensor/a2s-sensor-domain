@@ -4,7 +4,8 @@
     "version": 1,
     "timestamp": "2022-02-14T00:00:10",
     "correlationId": "57b8ac7e-ecc6-483f-aa03-c28ecd9e5587",
-    "type": "CREATE_SENSOR"
+    "type": "CREATE_SENSOR",
+    "aggregate": "Sensor"
   },
   "body": {
     "sn": "0199f777-dfbb-4c0a-8f5b-4cd123ed234f",
